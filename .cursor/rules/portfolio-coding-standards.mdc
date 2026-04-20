@@ -1,0 +1,25 @@
+---
+description: Coding standards for the portfolio app
+alwaysApply: true
+---
+
+# Portfolio Coding Standards
+
+## Must Follow
+- No inline styles in JSX/TSX. Use style files only.
+- Strict TypeScript only. Do not use `any`, unsafe casts, or `@ts-ignore` unless explicitly approved.
+- Never disable lint rules (`eslint-disable`, `eslint-disable-next-line`, etc.).
+
+## Component Folder Structure
+- Every component must live in its own folder named after the component.
+- Each component folder must include:
+  - `index.tsx` for component markup/logic
+  - `styles` file for that component styles (for example `styles.css`)
+  - `consts` file for static values (for example `consts.ts`)
+- Keep constants out of `index.tsx` when they are reusable/static config.
+
+## General Standards
+- Use React function components with clear, typed props.
+- Prefer semantic HTML (`header`, `main`, `section`, `footer`) where relevant.
+- Keep accessibility basics: meaningful `alt`, `label`, `aria-label`, and button types.
+- After substantial edits, run lint and fix introduced issues.
