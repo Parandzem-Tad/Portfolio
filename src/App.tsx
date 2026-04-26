@@ -1,4 +1,7 @@
 import './App.css'
+import axios from 'axios';
+
+
 
 const stackItems = [
   {
@@ -45,10 +48,45 @@ const workItems = [
 ]
 
 function App() {
+
+
+  const testGemini = async () => {
+    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+    const url = import.meta.env.VITE_GEMINI_URL;
+  
+    console.log("API KEY:", apiKey);
+    console.log("URL:", url);
+  
+    const payload = {
+      contents: [
+        {
+          parts: [{ text: "Բարև! Սա վերջնական ստուգումն է:" }]
+        }
+      ]
+    };
+  
+    try {
+      const response = await axios.post(url, payload, {
+        params: { key: apiKey },
+        headers: { "Content-Type": "application/json" }
+      });
+  
+      const text =
+        response.data?.candidates?.[0]?.content?.parts?.[0]?.text;
+  
+      console.log("Gemini-ի պատասխանը:", text);
+    } catch (error: any) {
+      console.error("Սխալ:", error?.response?.data || error.message);
+    }
+  };
+  
+      testGemini();
+
+  
   return (
     <div className="page">
       <header className="topbar">
-        <div className="brand">The Digital Atelier</div>
+        <div className="brand">The Frontend</div>
         <nav className="menu">
           <a className="menu-link is-active" href="#work">
             Work
