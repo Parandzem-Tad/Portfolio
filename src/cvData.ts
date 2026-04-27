@@ -3,7 +3,8 @@ export const cvData = {
       fullName: "Parandzem Tadevosyan",
       title: "Junior Frontend Developer | React & AI Integration",
       location: "Yerevan, Armenia",
-      aboutMe: "Junior Frontend Developer with a strong focus on building modern,  responsive web applications using React and TypeScript. I have a background in Economics, which helps me approach problems analytically and create user-centric solutions. Passionate about integrating AI into web applications to deliver smarter user experiences."
+      aboutMe:
+        "Motivated Junior Frontend Developer with hands-on experience building responsive and user-focused web applications using React and TypeScript. Passionate about integrating AI-powered features into modern interfaces. Strong analytical background in Economics, bringing structured thinking and attention to detail into development workflows."
     },
   
     skills: {
@@ -15,15 +16,36 @@ export const cvData = {
         "CSS3",
         "Tailwind CSS",
         "Git",
-        "GitHub"
+        "GitHub",
+        "REST APIs",
+        "Responsive Design",
+        "Basic AI API Integration (Gemini, OpenAI)"
       ],
       soft: [
-         "Problem Solving",
-         "Analytical Thinking", 
-         "Attention to Detail", 
-         "Communication", 
-         "Teamwork" ]
+        "Problem Solving",
+        "Analytical Thinking",
+        "Attention to Detail",
+        "Communication",
+        "Teamwork",
+        "Adaptability",
+        "Continuous Learning"
+      ]
     },
+  
+    projects: [
+      {
+        name: "AI Chat Interface",
+        description:
+          "Built a minimal AI chat UI using React and Axios, integrating Gemini API for real-time responses.",
+        technologies: ["React", "Axios", "API Integration"],
+      },
+      {
+        name: "Personal Portfolio Website",
+        description:
+          "Designed and developed a responsive portfolio showcasing projects and UI/UX work.",
+        technologies: ["React", "Tailwind CSS"],
+      }
+    ],
   
     education: [
       {
@@ -33,29 +55,6 @@ export const cvData = {
       {
         institution: "Self-learning / Online Courses",
         degree: "Frontend Development & AI Integration"
-      }
-    ],
-  
-    projects: [
-      {
-        name: "AI Portfolio Assistant",
-        techStack: ["React", "Axios", "Gemini API"],
-        details: "Developed a personal portfolio assistant with an integrated AI chatbot that answers questions about my experience and skills. Implemented API integration and dynamic UI for real-time responses."
-      }
-    ],
-  
-    languages: [
-      {
-        name: "Armenian",
-        level: "Native"
-      },
-      {
-        name: "English",
-        level: "Intermediate"
-      },
-      {
-        name: "Russian",
-        level: "Fluent"
       }
     ]
   };
