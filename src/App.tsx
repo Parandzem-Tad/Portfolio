@@ -57,7 +57,7 @@ function App() {
     if (!userInput.trim())
       return;
     setLoading(true);
-    setResponse('Մտածում եմ...');
+    setResponse('Thinking...');
     const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
     const payload = { contents: [{ parts: [{ text: userInput }] }] };
