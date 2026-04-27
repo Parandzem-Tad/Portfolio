@@ -1,5 +1,7 @@
 import './App.css'
 import axios from 'axios';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 
 
@@ -48,15 +50,42 @@ const workItems = [
 ]
 
 function App() {
+  const [userInput, setUserInput] = useState('');
+  const [response, setResponse] = useState('');
+  const [loading, setLoading] = useState(false);
+  const handleSend = async () => {
+    if (!userInput.trim())
+      return;
+    setLoading(true);
+    setResponse('Մտածում եմ...');
+    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+    const payload = { contents: [{ parts: [{ text: userInput }] }] };
+
+    try {
+      const res = await axios.post(url, payload);
+      const geminiText = res.data?.candidates?.[0]?.content?.parts?.[0]?.text;
+      setResponse(geminiText || "Պատասխան չստացվեց:");
+    }
+    catch (error: any) {
+      setResponse("Սխալ տեղի ունեցավ: Խնդրում ենք ստուգել կապը կամ API բանալին:");
+      console.error(error);
+    }
+    finally { setLoading(false); }
+  };
+
+
+
+
 
 
   const testGemini = async () => {
     const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-    const url = import.meta.env.VITE_GEMINI_URL;
-  
+    const url = `${import.meta.env.VITE_GEMINI_URL}?key=${import.meta.env.VITE_GEMINI_API_KEY}`;
+
     console.log("API KEY:", apiKey);
     console.log("URL:", url);
-  
+
     const payload = {
       contents: [
         {
@@ -64,25 +93,25 @@ function App() {
         }
       ]
     };
-  
+
     try {
       const response = await axios.post(url, payload, {
         params: { key: apiKey },
         headers: { "Content-Type": "application/json" }
       });
-  
+
       const text =
         response.data?.candidates?.[0]?.content?.parts?.[0]?.text;
-  
+
       console.log("Gemini-ի պատասխանը:", text);
     } catch (error: any) {
       console.error("Սխալ:", error?.response?.data || error.message);
     }
   };
-  
-      testGemini();
 
-  
+      useEffect(()=>{testGemini();},[]);
+
+
   return (
     <div className="page">
       <header className="topbar">
@@ -109,30 +138,42 @@ function App() {
       <main>
         <section className="hero-wrap" id="work">
           <div className="hero-content">
-          <p className="role-badge">JUNIOR FRONTEND DEVELOPER</p>
-          <h1 className="hero-title">
-            Parandzem
-            <br />
-            Tadevosyan
-          </h1>
-          <p className="hero-text">
-            I&apos;m a creative developer focused on crafting clean, accessible, and high-performance web
-            applications. Currently exploring the intersection of design and code at The Digital Atelier.
-          </p>
-          <div className="hero-actions">
-            <a className="primary-btn" href="#work">
-              View My Work
-            </a>
-            <a className="text-btn" href="#contact">
-              Let&apos;s Talk
-            </a>
-          </div>
+            <p className="role-badge">JUNIOR FRONTEND DEVELOPER</p>
+            <h1 className="hero-title">
+              Parandzem
+              <br />
+              Tadevosyan
+            </h1>
+            <p className="hero-text">
+              I&apos;m a creative developer focused on crafting clean, accessible, and high-performance web
+              applications. Currently exploring the intersection of design and code at The Digital Atelier.
+            </p>
+            <div className="hero-actions">
+              <a className="primary-btn" href="#work">
+                View My Work
+              </a>
+              <a className="text-btn" href="#contact">
+                Let&apos;s Talk
+              </a>
+            </div>
           </div>
 
           <aside className="hero-image-wrap">
             <img className="hero-image" src="/profile-portrait.png" alt="Portrait of Parandzem Tadevosyan" />
           </aside>
         </section>
+        <div className="chat-container">
+          <h2 className="chat-title">Gemini AI Օգնական</h2>
+          <div className="input-section">
+            <textarea className="chat-textarea" rows={4}
+              placeholder="Ինչպե՞ս կարող եմ օգնել ձեզ..." value={userInput}
+              onChange={(e) => setUserInput(e.target.value)} />
+            <button className="send-button"
+              onClick={handleSend} disabled={loading || !userInput.trim()} > {loading ? 'Ուղարկվում է...' : 'Ուղարկել հարցը'} </button> </div>
+          {response && (<div className="response-section">
+            <span className="response-label">Պատասխան՝</span>
+            <p className="response-text">{response}</p> </div>)}
+        </div>
 
         <section className="stack-section" id="stack">
           <p className="stack-label">CAPABILITIES</p>
@@ -247,7 +288,7 @@ function App() {
         <p className="footer-copy">© 2024 THE DIGITAL ATELIER. CRAFTED WITH INTENTION.</p>
       </footer>
     </div>
-  )
-}
+)};
+
 
 export default App
