@@ -1,23 +1,61 @@
 export const cvData = {
     personalInfo: {
-        fullName: "Parandzem Tadevosyan",
-        title: "Junior Frontend Developer",
-        location: "Yerevan, Armenia",
-        aboutMe: "I am a Junior Frontend Developer specializing in React and AI integration. 
-        With a background in Economics, I bring a detail- oriented and 
-        analytical approach to building modern, user- centric web applications."
-         },
-skills: ["React.js", "TypeScript", "JavaScript (ES6+)", "Tailwind CSS", "HTML5 & CSS3",
-    "Git / GitHub", "AI-Assisted Development"],
-    education: {
-    university: "Artsakh State University",
-        degree: "Bachelor’s Degree in Economics",
-            technicalTraining: "Frontend Development & AI Integration"
-},
-projects: [{
-    name: "AI Portfolio Assistant",
-    details: "A React application featuring an AI chatbot trained on my
-                      professional data using the Gemini API." }, { name: "Responsive Web Design",
-                       details: "Multiple projects focusing on mobile-first design and clean user interfaces." 
-                    }],
-    languages: ["Armenian (Native)", "English (Intermediate)", "Russian (Fluent)"] };
+      fullName: "Parandzem Tadevosyan",
+      title: "Junior Frontend Developer | React & AI Integration",
+      location: "Yerevan, Armenia",
+      aboutMe: "Junior Frontend Developer with a strong focus on building modern,  responsive web applications using React and TypeScript. I have a background in Economics, which helps me approach problems analytically and create user-centric solutions. Passionate about integrating AI into web applications to deliver smarter user experiences."
+    },
+  
+    skills: {
+      technical: [
+        "React.js",
+        "TypeScript",
+        "JavaScript (ES6+)",
+        "HTML5",
+        "CSS3",
+        "Tailwind CSS",
+        "Git",
+        "GitHub"
+      ],
+      soft: [
+         "Problem Solving",
+         "Analytical Thinking", 
+         "Attention to Detail", 
+         "Communication", 
+         "Teamwork" ]
+    },
+  
+    education: [
+      {
+        institution: "Artsakh State University",
+        degree: "Bachelor's Degree in Economics"
+      },
+      {
+        institution: "Self-learning / Online Courses",
+        degree: "Frontend Development & AI Integration"
+      }
+    ],
+  
+    projects: [
+      {
+        name: "AI Portfolio Assistant",
+        techStack: ["React", "Axios", "Gemini API"],
+        details: "Developed a personal portfolio assistant with an integrated AI chatbot that answers questions about my experience and skills. Implemented API integration and dynamic UI for real-time responses."
+      }
+    ],
+  
+    languages: [
+      {
+        name: "Armenian",
+        level: "Native"
+      },
+      {
+        name: "English",
+        level: "Intermediate"
+      },
+      {
+        name: "Russian",
+        level: "Fluent"
+      }
+    ]
+  };
