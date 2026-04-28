@@ -2,6 +2,8 @@ import './App.css'
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { cvData } from './cvData';
+import ReactMarkdown from "react-markdown"
 
 
 
@@ -60,7 +62,8 @@ function App() {
     setResponse('Մտածում եմ...');
     const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
-    const payload = { contents: [{ parts: [{ text: userInput }] }] };
+    const payload = { contents: [{ parts: [{ text: `Context:${JSON.stringify(cvData)}. User question:${userInput}.Answer
+       based on the context.` }] }] };
 
     try {
       const res = await axios.post(url, payload);
@@ -172,7 +175,9 @@ function App() {
               onClick={handleSend} disabled={loading || !userInput.trim()} > {loading ? 'Ուղարկվում է...' : 'Ուղարկել հարցը'} </button> </div>
           {response && (<div className="response-section">
             <span className="response-label">Պատասխան՝</span>
-            <p className="response-text">{response}</p> </div>)}
+            <div className="response-text"><ReactMarkdown>{response}</ReactMarkdown>
+            </div>
+            </div>)}
         </div>
 
         <section className="stack-section" id="stack">
