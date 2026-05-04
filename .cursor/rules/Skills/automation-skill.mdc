@@ -1,0 +1,12 @@
+---
+description: Automates CV data synchronization and professional skill presentation
+alwaysApply: true
+---
+
+ # Skill: CV & Career Data Manager 
+ This skill makes the AI an expert career assistant that ensures my portfolio data is professional, consistent, and always up-to-date.
+ 
+ # Rules for CV Automation 
+ - **Rule**: Whenever I add a new technology or tool to src/cvData.ts, the AI must automatically suggest the appropriate icon or category for it. 
+ - **Automation**: When updating job descriptions or project details, the AI should automatically suggest professional action verbs (e.g., "Engineered", "Architected", "Implemented") to enhance the technical tone. - **Action**: After any change to the CV data, the AI must automatically generate a short, catchy "About Me" summary that I can use in the hero section of the portfolio. 
+ - **Constraint**: Ensure that all dates in the CV follow a consistent format (e.g., "Month Year") and technologies are properly capitalized (e.g., "React", "TypeScript").
