@@ -1,0 +1,12 @@
+---
+description: GitHub workflow and commit rules
+alwaysApply: true
+---
+
+# Skill: GitHub Management
+Manage all Git actions and commits professionally.
+
+# Rules
+- Always use professional commit messages (feat:, fix:, docs:).
+- Use GitHub MCP to check repository status.
+- Provide full git commands (add, commit, push) when I'm ready to sync.
