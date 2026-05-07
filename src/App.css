@@ -24,7 +24,7 @@
 .menu {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 50px;
 }
 
 .menu-link {
@@ -467,7 +467,7 @@
 .footer-links {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 40px;
 }
 
 .footer-links a {
