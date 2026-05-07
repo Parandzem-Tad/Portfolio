@@ -1,12 +1,13 @@
 ---
-description: GitHub workflow and commit rules
+description: Security and Pre-Push Auditor (GitHub MCP)
 alwaysApply: true
 ---
 
-# Skill: GitHub Management
-Manage all Git actions and commits professionally.
+# Skill: GitHub Security Guardian
+Uses MCP tools to prevent sensitive data leaks and audit repository history.
 
 # Rules
-- Always use professional commit messages (feat:, fix:, docs:).
-- Use GitHub MCP to check repository status.
-- Provide full git commands (add, commit, push) when I'm ready to sync.
+- **Secret Protection**: Before any push, use `run_secret_scanning` to ensure no API keys or personal tokens (like the MCP token) are accidentally included in the files.
+- **Commit Audit**: Use `list_commits` to review the last few changes and check if any deleted code contained sensitive information that needs to be permanently scrubbed.
+- **Code Integrity**: Use `get_latest_release` to compare my local environment variables with the production environment settings to avoid deployment crashes.
+- **Permission Check**: Use `get_me` to verify my current repository permissions before attempting complex operations like `delete_file` or `merge_pull_request`.
