@@ -6,7 +6,6 @@ import { cvData } from './cvData';
 import ReactMarkdown from "react-markdown"
 
 
-
 const stackItems = [
   {
     icon: 'HTML',
@@ -52,6 +51,7 @@ const workItems = [
 ]
 
 function App() {
+  const [IsGeminiOpen, setIsGeminiOpen] = useState(false);
   const [userInput, setUserInput] = useState('');
   const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
@@ -132,6 +132,7 @@ function App() {
           <a className="menu-link" href="#contact">
             Contact
           </a>
+          <a className="gemini-btn" href="#gemini" onClick={(e) => {e.preventDefault(); setIsGeminiOpen(!IsGeminiOpen);}}>Gemini</a>
         </nav>
         <a className="resume-btn" href="#">
           Resume
@@ -165,7 +166,9 @@ function App() {
             <img className="hero-image" src="/mine.png" alt="Portrait of Parandzem Tadevosyan" />
           </aside>
         </section>
+        {IsGeminiOpen && (
         <div className="chat-container">
+          <button className="close-btn" onClick={() => setIsGeminiOpen(false)}>X</button>
           <h2 className="chat-title">Gemini AI Assistant</h2>
           <div className="input-section">
             <textarea className="chat-textarea" rows={4}
@@ -175,10 +178,11 @@ function App() {
               onClick={handleSend} disabled={loading || !userInput.trim()} > {loading ? 'Sending...' : 'Send answer'} </button> </div>
           {response && (<div className="response-section">
             <span className="response-label">Answer՝</span>
-            <div className="response-text"><ReactMarkdown>{response}</ReactMarkdown>
+           <div className="response-text"><ReactMarkdown>{response}</ReactMarkdown>
             </div>
-            </div>)}
-        </div>
+</div>)}
+        </div>)}
+      
 
         <section className="stack-section" id="stack">
           <p className="stack-label">CAPABILITIES</p>
