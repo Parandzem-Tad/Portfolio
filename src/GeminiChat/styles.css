@@ -1,0 +1,43 @@
+.gemini-send-btn {
+  margin-top: 12px;
+}
+
+.gemini-response {
+  margin-top: 16px;
+  padding: 16px;
+  background: var(--surface-muted);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  min-height: 100px;
+}
+
+.gemini-response-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.gemini-response-text h1,
+.gemini-response-text h2 {
+  font-weight: 700;
+  margin: 16px 0 8px;
+  color: var(--accent);
+  line-height: 1.3;
+}
+
+.gemini-response-text ul {
+  list-style-type: disc;
+  margin: 10px 0 10px 20px;
+  padding-left: 10px;
+}
+
+.gemini-response-text li {
+  margin-bottom: 6px;
+}
+
+.gemini-response-text p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: var(--text-primary);
+}

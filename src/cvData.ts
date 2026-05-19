@@ -4,7 +4,14 @@ export const cvData = {
       title: "Junior Frontend Developer | React & AI Integration",
       location: "Yerevan, Armenia",
       aboutMe:
-        "Motivated Junior Frontend Developer with hands-on experience building responsive and user-focused web applications using React and TypeScript. Passionate about integrating AI-powered features into modern interfaces. Strong analytical background in Economics, bringing structured thinking and attention to detail into development workflows."
+        "Motivated Junior Frontend Developer with hands-on experience building responsive and user-focused web applications using React and TypeScript. Passionate about integrating AI-powered features into modern interfaces. Strong analytical background in Economics, bringing structured thinking and attention to detail into development workflows.",
+      heroSummary:
+        "Junior Frontend Developer building responsive React experiences—with a passion for weaving AI into modern interfaces, backed by an economist's eye for structure and detail.",
+      social: {
+        github: "https://github.com/Parandzem-Tad",
+        linkedin: "https://www.linkedin.com/in/parandzem-tadevosyan",
+        portfolioRepo: "https://github.com/Parandzem-Tad/Portfolio",
+      },
     },
   
     skills: {

@@ -1,0 +1,67 @@
+.about-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px clamp(16px, 4vw, 40px) 72px;
+}
+
+.about-section-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--accent-muted);
+  font-weight: 700;
+}
+
+.about-section-title {
+  margin-bottom: 20px !important;
+  color: var(--text-primary) !important;
+}
+
+.about-summary {
+  font-size: 17px !important;
+  line-height: 1.7 !important;
+  color: var(--text-secondary) !important;
+  margin-bottom: 28px !important;
+}
+
+.about-card {
+  height: 100%;
+  background: var(--surface);
+  border: 1px solid var(--stack-card-border);
+}
+
+.about-card-title {
+  margin-bottom: 16px !important;
+  color: var(--text-primary) !important;
+}
+
+.about-education-item {
+  margin-bottom: 16px;
+}
+
+.about-education-item:last-child {
+  margin-bottom: 0;
+}
+
+.about-education-degree {
+  margin: 0 !important;
+  color: var(--text-primary) !important;
+}
+
+.about-skill-group {
+  margin-bottom: 16px;
+}
+
+.about-skill-group:last-child {
+  margin-bottom: 0;
+}
+
+.about-skill-label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: var(--text-secondary);
+}

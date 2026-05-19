@@ -1,0 +1,72 @@
+.stack-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px clamp(16px, 4vw, 40px) 72px;
+}
+
+.stack-section-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--accent-muted);
+  font-weight: 700;
+}
+
+.stack-section-title {
+  margin-bottom: 32px !important;
+  color: var(--text-primary) !important;
+}
+
+.stack-card {
+  height: 100%;
+  border: 1px solid var(--stack-card-border);
+  background: var(--surface);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stack-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(28, 39, 60, 0.1);
+}
+
+.stack-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.stack-icon-html {
+  background: #f8e3cb;
+  color: #ec7f29;
+}
+
+.stack-icon-css {
+  background: #d7e7ff;
+  color: #4e7fcf;
+}
+
+.stack-icon-js {
+  background: #f4e8a8;
+  color: #b9860f;
+}
+
+.stack-icon-react {
+  background: #d8f0ff;
+  color: #149eca;
+}
+
+.stack-icon-git {
+  background: #e4e9ef;
+  color: #2f3a4c;
+}
+
+.stack-icon-api {
+  background: #ebe6ff;
+  color: #5145cd;
+}

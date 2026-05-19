@@ -1,0 +1,14 @@
+.ai-avatar-panel {
+  text-align: center;
+  padding: 8px 0;
+}
+
+.ai-avatar-video-wrap {
+  margin-top: 20px;
+}
+
+.ai-avatar-video {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+}

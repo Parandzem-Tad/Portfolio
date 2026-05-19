@@ -1,0 +1,44 @@
+.contact-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 8px clamp(16px, 4vw, 40px) 88px;
+}
+
+.contact-card {
+  border: 1px solid var(--stack-card-border);
+  border-radius: 18px;
+  background: var(--surface);
+}
+
+.contact-section-label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--accent-muted);
+  font-weight: 700;
+}
+
+.contact-section-title {
+  margin-bottom: 16px !important;
+  max-width: 520px;
+  color: var(--text-primary) !important;
+}
+
+.contact-section-copy {
+  max-width: 480px;
+  margin-bottom: 24px !important;
+}
+
+.contact-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.contact-form-panel {
+  background: var(--surface-muted);
+  border-radius: 14px;
+  padding: 24px;
+}
