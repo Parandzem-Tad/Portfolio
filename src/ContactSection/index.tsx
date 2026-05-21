@@ -1,21 +1,33 @@
 import { EnvironmentOutlined, MailOutlined } from '@ant-design/icons'
-import { Button, Card, Col, Form, Input, Row, Typography } from 'antd'
+import { Button, Card, Col, Form, Input, Row, Typography, message } from 'antd'
 import { contactCopy, profile } from '../portfolioData'
 import { CONTACT_SECTION_ID } from './consts'
+import { sendContactMessage } from '../EmailJs'
+import { useState } from 'react'
 import './styles.css'
 
 type ContactFormValues = {
   fullName: string
   email: string
   message: string
-}
+};
 
 const ContactSection = () => {
-  const [form] = Form.useForm<ContactFormValues>()
+  const [form] = Form.useForm<ContactFormValues>();
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (_values: ContactFormValues) => {
-    form.resetFields()
-  }
+  const handleSubmit = async (values: ContactFormValues) => {
+    setLoading(true);
+    try {
+      await sendContactMessage(values);
+      message.success('Message sent successfully');
+      form.resetFields()
+    } catch (error) {
+      message.error('Failed to send message');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section className="contact-section" id={CONTACT_SECTION_ID}>
@@ -73,7 +85,7 @@ const ContactSection = () => {
                   <Input.TextArea rows={5} placeholder="Tell me about your project..." />
                 </Form.Item>
                 <Form.Item>
-                  <Button type="primary" htmlType="submit" block size="large">
+                  <Button type="primary" htmlType="submit" block size="large" loading={loading}>
                     Send Message
                   </Button>
                 </Form.Item>

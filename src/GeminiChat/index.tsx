@@ -32,10 +32,7 @@ const GeminiChat = ({ open, onClose }: GeminiChatProps) => {
   const [loading, setLoading] = useState(false)
 
   const handleSend = async () => {
-    if (!userInput.trim()) {
-      return
-    }
-
+    if (!userInput.trim()) return;
     setLoading(true)
     setResponse(GEMINI_THINKING_MESSAGE)
 
@@ -54,7 +51,7 @@ const GeminiChat = ({ open, onClose }: GeminiChatProps) => {
     }
 
     try {
-      const res = await axios.post<GeminiResponse>(url, payload)
+      const res = await axios.post<GeminiResponse>(url, payload);
       const geminiText = res.data?.candidates?.[0]?.content?.parts?.[0]?.text
       setResponse(geminiText ?? GEMINI_EMPTY_RESPONSE)
     } catch (error: unknown) {
