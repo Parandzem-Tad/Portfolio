@@ -43,4 +43,29 @@
     flex-direction: column;
     text-align: center;
   }
+
+  .site-footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer {
+    padding-block: 20px;
+  }
+
+  .site-footer-brand {
+    font-size: 1.1rem !important;
+  }
+
+  .site-footer-links {
+    gap: 12px 20px;
+  }
+
+  .site-footer-copy {
+    font-size: 11px;
+    line-height: 1.5;
+  }
 }

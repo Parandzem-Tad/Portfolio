@@ -24,7 +24,7 @@ const ProjectsSection = () => {
 
       <Row className="projects-grid" gutter={[24, 24]}>
         {projectItems.map((project) => (
-          <Col key={project.key} xs={24} lg={12}>
+          <Col key={project.key} xs={24} md={12}>
             <Card
               className="project-card"
               bordered={false}

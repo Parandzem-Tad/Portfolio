@@ -74,7 +74,15 @@ const AiAvatar = ({ open, onClose }: AiAvatarProps) => {
   }
 
   return (
-    <Modal title={AVATAR_MODAL_TITLE} open={open} onCancel={onClose} footer={null} width={520}>
+    <Modal
+      title={AVATAR_MODAL_TITLE}
+      open={open}
+      onCancel={onClose}
+      footer={null}
+      width={520}
+      className="responsive-modal"
+      styles={{ body: { maxHeight: 'min(75vh, 560px)', overflowY: 'auto' } }}
+    >
       <div className="ai-avatar-panel">
         <Typography.Paragraph type="secondary">
           Generate a short speaking avatar clip powered by D-ID.

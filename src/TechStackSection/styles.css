@@ -70,3 +70,22 @@
   background: #ebe6ff;
   color: #5145cd;
 }
+
+@media (max-width: 768px) {
+  .stack-section {
+    padding-bottom: 56px;
+  }
+
+  .stack-section-title {
+    margin-bottom: 24px !important;
+    font-size: clamp(1.5rem, 5vw, 2rem) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .stack-card-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+}

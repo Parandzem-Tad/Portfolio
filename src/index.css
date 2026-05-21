@@ -39,6 +39,7 @@ body {
   margin: 0;
   min-height: 100vh;
   background: var(--page-bg);
+  overflow-x: clip;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
@@ -49,4 +50,41 @@ a {
 
 #root {
   min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 64px;
+  }
+}
+
+@media (max-width: 576px) {
+  .responsive-modal.ant-modal {
+    max-width: calc(100vw - 24px) !important;
+    margin: 12px auto !important;
+    padding-bottom: 0;
+  }
+
+  .responsive-modal .ant-modal-content {
+    max-height: calc(100dvh - 24px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .responsive-modal .ant-modal-body {
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+  }
 }

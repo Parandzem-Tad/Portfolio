@@ -1,8 +1,20 @@
 .app-layout {
   min-height: 100vh;
   background: var(--page-bg);
+  overflow-x: clip;
 }
 
 .app-content {
   width: 100%;
+  overflow-x: clip;
+}
+
+main > section {
+  scroll-margin-top: 72px;
+}
+
+@media (max-width: 768px) {
+  main > section {
+    scroll-margin-top: 64px;
+  }
 }

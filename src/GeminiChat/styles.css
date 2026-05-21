@@ -2,6 +2,18 @@
   margin-top: 12px;
 }
 
+@media (max-width: 576px) {
+  .gemini-response {
+    padding: 12px;
+    min-height: 80px;
+  }
+
+  .gemini-response-text h1,
+  .gemini-response-text h2 {
+    font-size: 1.1rem;
+  }
+}
+
 .gemini-response {
   margin-top: 16px;
   padding: 16px;

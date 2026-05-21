@@ -65,3 +65,21 @@
   font-weight: 700;
   color: var(--text-secondary);
 }
+
+.about-skill-group .ant-tag {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding-bottom: 56px;
+  }
+
+  .about-section-title {
+    font-size: clamp(1.5rem, 5vw, 2rem) !important;
+  }
+
+  .about-summary {
+    font-size: 16px !important;
+  }
+}

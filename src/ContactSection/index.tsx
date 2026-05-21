@@ -2,21 +2,16 @@ import { EnvironmentOutlined, MailOutlined } from '@ant-design/icons'
 import { Button, Card, Col, Form, Input, Row, Typography, message } from 'antd'
 import { contactCopy, profile } from '../portfolioData'
 import { CONTACT_SECTION_ID } from './consts'
-import { sendContactMessage } from '../EmailJs'
+import { sendContactMessage, type ContactMessagePayload} from '../EmailJs'
 import { useState } from 'react'
 import './styles.css'
 
-type ContactFormValues = {
-  fullName: string
-  email: string
-  message: string
-};
 
 const ContactSection = () => {
-  const [form] = Form.useForm<ContactFormValues>();
+  const [form] = Form.useForm<ContactMessagePayload>();
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (values: ContactFormValues) => {
+  const handleSubmit = async (values: ContactMessagePayload) => {
     setLoading(true);
     try {
       await sendContactMessage(values);
@@ -31,7 +26,7 @@ const ContactSection = () => {
 
   return (
     <section className="contact-section" id={CONTACT_SECTION_ID}>
-      <Card className="contact-card" bordered={false}>
+      <Card className="contact-card" bordered={false} variant="borderless">
         <Row gutter={[40, 32]}>
           <Col xs={24} lg={12}>
             <Typography.Text className="contact-section-label">

@@ -12,3 +12,13 @@
   max-width: 420px;
   border-radius: 12px;
 }
+
+@media (max-width: 576px) {
+  .ai-avatar-panel {
+    padding: 0;
+  }
+
+  .ai-avatar-video-wrap {
+    margin-top: 16px;
+  }
+}

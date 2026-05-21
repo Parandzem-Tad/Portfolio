@@ -78,6 +78,8 @@ const GeminiChat = ({ open, onClose }: GeminiChatProps) => {
       footer={null}
       width={640}
       destroyOnHidden
+      className="responsive-modal"
+      styles={{ body: { maxHeight: 'min(70vh, 520px)', overflowY: 'auto' } }}
     >
       <Input.TextArea
         rows={4}
